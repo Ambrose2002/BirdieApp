@@ -8,6 +8,8 @@ class BirdTableViewCell: UITableViewCell {
     private let birdImageView = UIImageView()
     private let birdNameLabel = UILabel()
     
+    static let reuse = "BirdTableViewCellReuseId"
+    
     // MARK: - Initializer
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -18,6 +20,13 @@ class BirdTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Configure
+    
+    func configure(bird: Bird) {
+        birdNameLabel.text = bird.name
+        birdImageView.image = UIImage(named: bird.image)
     }
     
     // MARK: - Set up views

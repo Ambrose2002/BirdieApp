@@ -10,6 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: - Properties (view)
+    private let tableView = UITableView()
+    
+    
     
     // MARK: - Properties (data)
     
@@ -34,13 +37,50 @@ class ViewController: UIViewController {
         
         title = "Birds"
         view.backgroundColor = UIColor.white
+        setUpTableView()
     }
     
     // MARK: - Set Up Views
+    
+    private func setUpTableView() {
+        tableView.register(BirdTableViewCell.self, forCellReuseIdentifier: BirdTableViewCell.reuse)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
 
 }
 
 // MARK: - UITableView Delegate
 
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
 
 // MARK: - UITableView DataSource
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return birds.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BirdTableViewCell.reuse, for: indexPath) as? BirdTableViewCell
+            else {return UITableViewCell()}
+        
+        cell.configure(bird: birds[indexPath.row])
+        return cell
+    }
+    
+}
