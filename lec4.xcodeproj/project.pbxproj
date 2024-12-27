@@ -13,6 +13,7 @@
 		2E309ECC2A313D5E00B1C34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E309ECB2A313D5E00B1C34E /* Assets.xcassets */; };
 		2E309ECF2A313D5E00B1C34E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E309ECD2A313D5E00B1C34E /* LaunchScreen.storyboard */; };
 		2E309EDE2A314BF600B1C34E /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E309EDD2A314BF600B1C34E /* Bird.swift */; };
+		ABFAF65B2D1F288400AE93BF /* BirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFAF65A2D1F288400AE93BF /* BirdTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2E309ECE2A313D5E00B1C34E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E309ED02A313D5E00B1C34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E309EDD2A314BF600B1C34E /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
+		ABFAF65A2D1F288400AE93BF /* BirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		ABFAF6592D1F272600AE93BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ABFAF65A2D1F288400AE93BF /* BirdTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E309EC72A313D5D00B1C34E /* ViewController.swift in Sources */,
+				ABFAF65B2D1F288400AE93BF /* BirdTableViewCell.swift in Sources */,
 				2E309EC32A313D5D00B1C34E /* AppDelegate.swift in Sources */,
 				2E309EDE2A314BF600B1C34E /* Bird.swift in Sources */,
 				2E309EC52A313D5D00B1C34E /* SceneDelegate.swift in Sources */,
